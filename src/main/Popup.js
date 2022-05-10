@@ -15,6 +15,7 @@ class Popup extends Component {
             bounciness: 15,
             positionView: new Animated.Value(this.height),
             opacity: new Animated.Value(0),
+            opacityDuration: 300,
             positionPopup: new Animated.Value(this.height),
             popupHeight: 0,
             title: false,
@@ -76,7 +77,7 @@ class Popup extends Component {
                 }),
                 Animated.timing(this.state.opacity, {
                     toValue: 1,
-                    duration: 300,
+                    duration: this.state.opacityDuration,
                     useNativeDriver: this.state.useNativeDriver,
                 }),
                 Animated.spring(this.state.positionPopup, {
