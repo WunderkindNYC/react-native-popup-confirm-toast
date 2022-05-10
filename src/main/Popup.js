@@ -12,6 +12,7 @@ class Popup extends Component {
         this.width = Platform.OS === 'android' ? Dimensions.get('screen').width : Dimensions.get('window').width;
 
         this.defaultState = {
+            bounciness: 15,
             positionView: new Animated.Value(this.height),
             opacity: new Animated.Value(0),
             positionPopup: new Animated.Value(this.height),
@@ -80,7 +81,7 @@ class Popup extends Component {
                 }),
                 Animated.spring(this.state.positionPopup, {
                     toValue: (this.height / 2) - (this.state.popupHeight / 2),
-                    bounciness: 15,
+                    bounciness: this.state.bounciness,
                     useNativeDriver: this.state.useNativeDriver,
                 }),
             ]).start();
