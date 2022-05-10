@@ -4,10 +4,10 @@ import Popup from './Popup';
 import Toast from './Toast';
 import SPSheet from './SPSheet';
 
-function Root() {
+function Root(props) {
     return (
         <>
-            {this.props.children}
+            {props.children}
             <Popup
                 ref={c => {
                     if (c) {
