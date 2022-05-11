@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Popup from './Popup';
 import Toast from './Toast';
 import SPSheet from './SPSheet';
+import { View } from 'react-native';
 
 function Root(props) {
     return (
-        <>
+        <View style={{ flex: 1, overflow: "hidden" }}>
             {props.children}
             <Popup
                 ref={c => {
@@ -30,7 +31,7 @@ function Root(props) {
                     }
                 }}
             />
-        </>
+        </View>
     );
 }
 
